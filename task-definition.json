@@ -1,0 +1,95 @@
+{
+    "networkMode": "bridge",
+    "taskRoleArn": null,
+    "containerDefinitions": [
+        {
+            "volumesFrom": null,
+            "memory": 300,
+            "extraHosts": null,
+            "dnsServers": null,
+            "disableNetworking": null,
+            "dnsSearchDomains": null,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "hostname": null,
+            "essential": true,
+            "entryPoint": null,
+            "mountPoints": null,
+            "name": "sample-nginx",
+            "ulimits": null,
+            "dockerSecurityOptions": null,
+            "environment": null,
+            "links": [
+                "sample-nodejs-1"
+            ],
+            "workingDirectory": null,
+            "readonlyRootFilesystem": null,
+            "image": "778129680386.dkr.ecr.us-east-1.amazonaws.com/gumgum/sample-test/nginx:latest",
+            "command": null,
+            "user": null,
+            "dockerLabels": {
+                "type": "nginx"
+            },
+            "logConfiguration": null,
+            "cpu": 10,
+            "privileged": false
+        },
+        {
+            "volumesFrom": null,
+            "memory": 300,
+            "extraHosts": null,
+            "dnsServers": null,
+            "disableNetworking": null,
+            "dnsSearchDomains": null,
+            "portMappings": [],
+            "hostname": null,
+            "essential": true,
+            "entryPoint": null,
+            "mountPoints": null,
+            "name": "sample-nodejs-1",
+            "ulimits": null,
+            "dockerSecurityOptions": null,
+            "environment": null,
+            "links": [
+                "sample-redis"
+            ],
+            "workingDirectory": null,
+            "readonlyRootFilesystem": null,
+            "image": "778129680386.dkr.ecr.us-east-1.amazonaws.com/gumgum/demo/gumrefdemo-gumref-demo-nodejs:latest",
+            "command": null,
+            "user": null,
+            "dockerLabels": {
+                "type": "nodejs"
+            },
+            "logConfiguration": null,
+            "cpu": 0,
+            "privileged": null
+        },
+        {
+            "name": "sample-redis",
+            "image": "778129680386.dkr.ecr.us-east-1.amazonaws.com/gumgum/sample-test/redis:latest",
+            "memory": "300",
+            "cpu": "10",
+            "essential": true,
+            "portMappings": [],
+            "environment": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": null,
+            "ulimits": null,
+            "dockerLabels": null
+        }
+    ],
+    "volumes": [],
+    "family": "sample-nodejs-nginx-redis-app",
+    "placementConstraints": []
+}
